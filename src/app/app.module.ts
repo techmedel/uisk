@@ -8,13 +8,15 @@ import { AppRoutingModule } from './modules/app-routing.module';
 import { LayoutComponent } from './layout/layout/layout.component';
 import { LayoutModule } from './layout/layout.module';
 import { SistemaComponent } from './main/pages/sistema/sistema.component';
+import { LoginComponent } from './main/pages/login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    SistemaComponent
+    SistemaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

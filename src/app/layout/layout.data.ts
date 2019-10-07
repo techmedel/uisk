@@ -5,7 +5,16 @@ export const menu_principal = {
 export const menu_perfil = [
   {
     icon: "person",
-    title:"",
-    badge: 0
+    title:"Mi perfil",
+    routerLink: "profile",
+    type:"rigth-top-menu",
+    position: 0
+  },
+  {
+    icon: "person",
+    title:"Mi perfil",
+    routerLink: "profile",
+    type:"rigth-top-menu",
+    position: 1
   }
 ]
