@@ -9,6 +9,9 @@ import { LayoutComponent } from './layout/layout/layout.component';
 import { LayoutModule } from './layout/layout.module';
 import { SistemaComponent } from './main/pages/sistema/sistema.component';
 import { LoginComponent } from './main/pages/login/login.component';
+import { MonitoreoComponent } from './main/pages/monitoreo/monitoreo.component';
+import { AeropuertoComponent } from './main/pages/aeropuerto/aeropuerto.component';
+import { InicioComponent } from './main/pages/inicio/inicio.component';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { LoginComponent } from './main/pages/login/login.component';
     AppComponent,
     LayoutComponent,
     SistemaComponent,
-    LoginComponent
+    LoginComponent,
+    MonitoreoComponent,
+    AeropuertoComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,

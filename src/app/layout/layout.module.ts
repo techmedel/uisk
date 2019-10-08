@@ -6,6 +6,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MaterialModule } from '../modules/material-module';
 import { AppRoutingModule } from '../modules/app-routing.module';
 import { LayoutPipe } from './layout.pipe';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations:[
@@ -22,6 +23,7 @@ import { LayoutPipe } from './layout.pipe';
     FooterComponent
   ],
   imports:[
+    CommonModule,
     MaterialModule,
     AppRoutingModule
   ]
