@@ -4,21 +4,44 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: #ffffff;
+
+    background: {
+        image: url("/assets/media/img/bg.jpg");
+        size: cover;
+        repeat: no-repeat;
+        position: center center;
+    };
+
     .box{
         position: absolute;
-        width: 400px;
+        width: 25%;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
     }
 }
 
-mat-form-field{
-    width: 100%
+.logoimg{
+    position: fixed;
+    size: cover;
+    width: 200px;
+    left: 5px;
 }
 
 .forgotps{
-    position: fixed;
-    right: 5px;
+    position: absolute;
+    right: 5%;
+}
+
+.from-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-footer{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    color: #c7c7c7;
 }
