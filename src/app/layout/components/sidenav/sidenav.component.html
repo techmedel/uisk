@@ -24,10 +24,6 @@
         </button>
 
         <mat-menu #profileMenu>
-            <button mat-menu-item routerLink="login" (click)="snav.toggle()">
-                <mat-icon>exit_to_app</mat-icon>
-                <span>Salir</span>
-            </button>
 
         </mat-menu>
     </div>
@@ -41,6 +37,11 @@
             (click)="snav.toggle()">
             <mat-icon>{{item.icon}}</mat-icon>
             <span>{{item.tittle}}</span>
+        </button>
+
+        <button mat-menu-item routerLink="login" (click)="snav.toggle()">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Cerrar sesión</span>
         </button>
 
     </mat-sidenav>

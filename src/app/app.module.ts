@@ -12,6 +12,8 @@ import { LoginComponent } from './main/pages/login/login.component';
 import { MonitoreoComponent } from './main/pages/monitoreo/monitoreo.component';
 import { AeropuertoComponent } from './main/pages/aeropuerto/aeropuerto.component';
 import { InicioComponent } from './main/pages/inicio/inicio.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,6 +28,9 @@ import { InicioComponent } from './main/pages/inicio/inicio.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,

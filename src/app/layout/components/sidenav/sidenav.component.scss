@@ -25,3 +25,13 @@ h1.app-name {
   position: fixed;
   right: 0;
 }
+
+mat-sidenav-container{
+  background: {
+    opacity: 0.5;
+    image: linear-gradient(rgba(255, 255, 255, 0.99), rgba(255, 255, 255, 0.9)), url("/assets/media/img/bg.jpg");
+    size: cover;
+    repeat: no-repeat;
+    position: center center;
+  };
+}

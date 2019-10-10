@@ -24,8 +24,15 @@
 .logoimg{
     position: fixed;
     size: cover;
-    width: 200px;
+    width: 15%;
     left: 5px;
+}
+
+.logoimg-right{
+    position: fixed;
+    size: cover;
+    width: 15%;
+    right: 5px;
 }
 
 .forgotps{
@@ -44,4 +51,14 @@
     text-align: center;
     bottom: 0;
     color: #c7c7c7;
+}
+
+.auxile{
+    padding: 0;
+    overflow: auto;
+    .element{
+        position: fixed;
+        text-align: right;
+        right: 15px;
+    }
 }
