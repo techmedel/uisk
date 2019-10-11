@@ -40,14 +40,12 @@ export class LoginComponent implements OnInit {
     this.visibility_icon = !this.visibility_icon
   }
 
-  login() {
-    this.api.getStatusSession()
-    
+  login() {    
     this.api.login(this.loginform.value).then(data => {
-      if(data)
-      this.router.navigate(['/inicio'])
+      if(data){
+        this.router.navigate(['/inicio'])
+      }
     });
   }
-
 
 }

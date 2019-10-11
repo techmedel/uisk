@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Api } from './app.api';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   title = 'material';
+
+  constructor(public api: Api){
+   
+  }
   
-  ngOnInit(){ }
+  ngOnInit(){
+    this.api.getStatusSession();
+  }
 }

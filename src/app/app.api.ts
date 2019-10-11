@@ -1,41 +1,43 @@
 import { Injectable, Inject } from '@angular/core';
 import Swal from 'sweetalert2';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
     providedIn: 'root'
 })
 
 export class Api {
-
-    public headers = new HttpHeaders();
+    headers: any;
 
     constructor(
         @Inject('ur_api_htsk') public baseUrlCan: string,
-        public http: HttpClient
-        ){
-        this.headers.set('Content-Type', 'application/json');
+        public http: HttpClient,
+        private router: Router) {
+        this.setHeaders();
     }
 
-    setBarrerToken() {
-        this.headers.set('Authorization', 'Bearrer ' + sessionStorage.getItem('token'));
+    setHeaders() {
+        this.headers = {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${sessionStorage.getItem('token').toString()}`
+        }
     }
 
-    public login(_data):Promise<any> {
-        this.setBarrerToken();
+    public login(_data): Promise<any> {
         return new Promise((resolve) => {
             Swal.fire({
                 title: 'Iniciando Sesión',
                 onBeforeOpen: () => {
                     Swal.showLoading();
                     this.http.post<any>(
-                        this.baseUrlCan+"/Account/V1/Login",
+                        this.baseUrlCan + "/Account/V1/Login",
                         _data,
                         { headers: this.headers }
                     ).subscribe(_data => {
                         if (_data.token) {
-                            sessionStorage.setItem("token",_data.token)
-                            this.setBarrerToken();
+                            sessionStorage.setItem("token", _data.token)
+                            this.setHeaders();
                             Swal.close();
                             resolve(true);
                         }
@@ -44,7 +46,7 @@ export class Api {
                             type: 'error',
                             title: error.statusText,
                             text: error.message,
-                            onClose:() => resolve(false)
+                            onClose: () => resolve(false)
                         })
                     });
                 }
@@ -53,15 +55,16 @@ export class Api {
     }
 
     public getStatusSession() {
-        this.headers.set('Authorization', 'Bearrer ' + sessionStorage.getItem('token'));
+        this.setHeaders();
         this.http.get(
-            this.baseUrlCan+"/Account/V1/GetStatusSession",
+            this.baseUrlCan + "/Account/V1/GetStatusSession",
             { headers: this.headers }
         ).subscribe(_data => {
-            return _data;
+            return;
         }, error => {
-            console.log(sessionStorage.getItem('token'));
+            this.router.navigate(['/login'])
         });
+
     }
 
 }
