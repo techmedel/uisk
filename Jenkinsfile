@@ -22,11 +22,11 @@ pipeline {
         stage('Publish') {
             steps {    
                 echo 'Deploying....'
-                bat "%SYSTEMROOT%/System32/inetsrv/appcmd stop apppool /apppool.name:\"${JOB_NAME}\""
-                bat "%SYSTEMROOT%/System32/inetsrv/appcmd stop site /site.name:\"${JOB_NAME}\""
-                bat "copy /y \"${WORKSPACE}\\dist\\*.*\" \"C:/${JOB_NAME}\""
-                bat "%SYSTEMROOT%/System32/inetsrv/appcmd start apppool /apppool.name:\"${JOB_NAME}\""
-                bat "%SYSTEMROOT%/System32/inetsrv/appcmd start site /site.name:\"${JOB_NAME}\""
+                bat "%SYSTEMROOT%/System32/inetsrv/appcmd stop apppool /apppool.name:\"${JOB_BASE_NAME}\""
+                bat "%SYSTEMROOT%/System32/inetsrv/appcmd stop site /site.name:\"${JOB_BASE_NAME}\""
+                bat "copy /y \"${WORKSPACE}\\dist\\*.*\" \"C:/${JOB_BASE_NAME}\""
+                bat "%SYSTEMROOT%/System32/inetsrv/appcmd start apppool /apppool.name:\"${JOB_BASE_NAME}\""
+                bat "%SYSTEMROOT%/System32/inetsrv/appcmd start site /site.name:\"${JOB_BASE_NAME}\""
             }
         }
         stage('Notification') {
