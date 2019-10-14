@@ -21,7 +21,7 @@
                         <mat-icon>https</mat-icon> &nbsp;
                     </span>
 
-                    <input [type]="password_type" matInput placeholder="Contraseña" formControlName="password">
+                    <input [type]="password_type" matInput placeholder="Contraseña" formControlName="password" (keyup.enter)="login()">
 
                     <button mat-button matSuffix (click)="showVisibilitPassword()">
                         <mat-icon matTooltip="Mostrar contraseña" *ngIf="visibility_icon">visibility</mat-icon>
