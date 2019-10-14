@@ -7,7 +7,7 @@ import { environment } from './environments/environment';
 
 export function getBaseUrlCan() {
   if (environment.production) 
-    return 'http://cnsfdesprorr:6100/api'
+    return 'http://192.168.1.222:81/ap'
   else return 'http://192.168.1.222:81/api'
 }
 

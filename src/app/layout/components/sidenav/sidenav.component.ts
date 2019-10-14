@@ -1,6 +1,7 @@
 import { Component, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { LayoutService } from '../../layout.service';
+import { Api } from 'src/app/app.api';
 
 @Component({
   selector: 'app-sidenav',
@@ -16,8 +17,8 @@ export class SidenavComponent implements OnDestroy {
   constructor(
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
-    private ls: LayoutService) {
-
+    private ls: LayoutService,
+    public api: Api) {
     this.items_menu_left = this.ls.getItemsMenuleft();
   }
 

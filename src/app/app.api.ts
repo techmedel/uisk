@@ -20,7 +20,7 @@ export class Api {
     setHeaders() {
         this.headers = {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${sessionStorage.getItem('token').toString()}`
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
         }
     }
 
@@ -54,6 +54,11 @@ export class Api {
         });
     }
 
+    public logOut(){
+        sessionStorage.clear();
+        this.getStatusSession()
+    }
+
     public getStatusSession() {
         this.setHeaders();
         this.http.get(
@@ -64,7 +69,6 @@ export class Api {
         }, error => {
             this.router.navigate(['/login'])
         });
-
     }
 
 }

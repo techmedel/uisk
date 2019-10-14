@@ -39,9 +39,9 @@
             <span>{{item.tittle}}</span>
         </button>
 
-        <button mat-menu-item routerLink="login" (click)="snav.toggle()">
-                <mat-icon>exit_to_app</mat-icon>
-                <span>Cerrar sesión</span>
+        <button mat-menu-item (click)="snav.toggle(); api.logOut()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Cerrar sesión</span>
         </button>
 
     </mat-sidenav>
