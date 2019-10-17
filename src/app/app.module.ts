@@ -14,6 +14,13 @@ import { AeropuertoComponent } from './main/pages/aeropuerto/aeropuerto.componen
 import { InicioComponent } from './main/pages/inicio/inicio.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from 'src/environments/environment';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -27,6 +34,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     InicioComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule ,// imports firebase/storage only needed for storage features
+    AngularFireDatabaseModule,
+    ChartsModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,
