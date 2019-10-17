@@ -13,7 +13,6 @@ h1.app-name {
   /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
   flex: 1;
-
 }
 
 .is-mobile .sidenav-container {
@@ -22,7 +21,17 @@ h1.app-name {
   flex: 1 0 auto;
 }
 
-.sidenav-button{
-  width: 100%;
-  text-align: left;
+.right-menu{
+  position: fixed;
+  right: 0;
+}
+
+mat-sidenav-container{
+  background: {
+    opacity: 0.5;
+    image: linear-gradient(rgba(255, 255, 255, 0.99), rgba(255, 255, 255, 0.9)), url("/assets/media/img/bg.jpg");
+    size: cover;
+    repeat: no-repeat;
+    position: center center;
+  };
 }

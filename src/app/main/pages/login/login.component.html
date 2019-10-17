@@ -1,0 +1,47 @@
+<div class="login-plain">
+    <img src="/assets/media/img/logo.png" class="logoimg">
+    <img src="/assets/media/img/tecmoin-logo.png" class="logoimg-right">
+    <mat-card class="box mat-elevation-z16">
+
+        <mat-card-header>
+
+        </mat-card-header>
+
+        <mat-card-content>
+            <div class="from-container">
+                <mat-form-field [formGroup]="loginform">
+                    <span matPrefix>
+                        <mat-icon matTooltip="primera sección de e-mail o usuario asignado">person</mat-icon> &nbsp;
+                    </span>
+                    <input type="text" matInput placeholder="Usuario" formControlName="username">
+                </mat-form-field>
+
+                <mat-form-field [formGroup]="loginform">
+                    <span matPrefix>
+                        <mat-icon>https</mat-icon> &nbsp;
+                    </span>
+
+                    <input [type]="password_type" matInput placeholder="Contraseña" formControlName="password" (keyup.enter)="login()">
+
+                    <button mat-button matSuffix (click)="showVisibilitPassword()">
+                        <mat-icon matTooltip="Mostrar contraseña" *ngIf="visibility_icon">visibility</mat-icon>
+                        <mat-icon matTooltip="Ocultar contraseña" *ngIf="!visibility_icon">visibility_off</mat-icon>
+                    </button>
+
+                </mat-form-field>
+            </div>
+
+            <div class="auxile">
+                <mat-checkbox matTooltip="Permite al sistema recordar tu sesión">Recordarme</mat-checkbox>
+                <a class="element" href="">olvide mi contraseña</a>
+            </div>
+        </mat-card-content>
+
+        <mat-card-actions align="end">
+            <button mat-raised-button color="primary" (click)="login()" [disabled]="loginform.status == 'INVALID'" >Iniciar sesión</button>
+        </mat-card-actions>
+
+    </mat-card>
+    <p class="login-footer">Administradora de Activos Terracota, S.A. de C.V. Copyright © 2013 - {{year_now}}. Derechos
+        reservados.</p>
+</div>

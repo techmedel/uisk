@@ -7,8 +7,8 @@ import { environment } from './environments/environment';
 
 export function getBaseUrlCan() {
   if (environment.production) 
-    return 'http://cnsfdesprorr:6100/api'
-  else return 'http://localhost:5000/api'
+    return 'http://192.168.1.222:81/ap'
+  else return 'http://192.168.1.222:81/api'
 }
 
 if (environment.production) {
@@ -16,8 +16,8 @@ if (environment.production) {
 }
 
 const providers = [
-  { provide: 'URL_CAN', useFactory: getBaseUrlCan, deps: [] },
+  { provide: 'ur_api_htsk', useFactory: getBaseUrlCan, deps: [] },
 ];
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+platformBrowserDynamic(providers).bootstrapModule(AppModule)
   .catch(err => console.error(err));

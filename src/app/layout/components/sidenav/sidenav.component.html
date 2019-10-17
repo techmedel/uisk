@@ -1,32 +1,48 @@
 <mat-toolbar color="primary" class="toolbar">
+
     <button mat-icon-button (click)="snav.toggle()">
         <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="app-name">CNSF</h1>
-    <button mat-icon-button (click)="chat.toggle()">
-        <mat-icon>chat</mat-icon>
-    </button>
+
+    <h1 class="app-name">Hilco Terracota</h1>
+
+    <div class="right-menu">
+
+        <button mat-icon-button [matMenuTriggerFor]="notificationsMenu">
+            <mat-icon>notifications</mat-icon>
+        </button>
+        <mat-menu #notificationsMenu>
+
+        </mat-menu>
+
+        <button mat-icon-button [matMenuTriggerFor]="profileMenu">
+            <mat-icon>person</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="chat.toggle()">
+            <mat-icon>chat</mat-icon>
+        </button>
+
+        <mat-menu #profileMenu>
+
+        </mat-menu>
+    </div>
+
 </mat-toolbar>
 
-<mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav mode="over">
 
-        <button mat-button class="sidenav-button">
-            <mat-icon>home</mat-icon>
-            <span>INICIO</span>
+        <button mat-menu-item *ngFor="let item of items_menu_left" [routerLink]="item.routerLink"
+            (click)="snav.toggle()">
+            <mat-icon>{{item.icon}}</mat-icon>
+            <span>{{item.tittle}}</span>
         </button>
 
-        <button mat-button [matMenuTriggerFor]="menu" class="sidenav-button">
-            <mat-icon>settings_applications</mat-icon>
-            <span>PANEL DE ADMINISTRACION</span>
+        <button mat-menu-item (click)="snav.toggle(); api.logOut()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Cerrar sesión</span>
         </button>
-
-        <mat-menu #menu>
-            <button mat-menu-item routerLink="administracion/sistemas">
-                <span>SISTEMAS</span>
-            </button>
-        </mat-menu>
 
     </mat-sidenav>
 
