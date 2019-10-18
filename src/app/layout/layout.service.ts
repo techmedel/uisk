@@ -31,11 +31,18 @@ export class LayoutService {
       position: 2
     },
     {
+      icon: "search",
+      tittle:"Consulta",
+      routerLink: "consulta",
+      type:"items_menu_left",
+      position: 3
+    },
+    {
       icon: "settings_applications",
       tittle:"Panel de administracion",
       routerLink: "admin_setings",
       type:"items_menu_left",
-      position: 3
+      position: 4
     }]
   }
   

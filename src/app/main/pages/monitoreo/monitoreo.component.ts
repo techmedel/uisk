@@ -12,7 +12,6 @@ export class MonitoreoComponent implements OnInit {
   public showTopProsses_data: any;
 
   constructor(public ms: MonitoreoService) {
-
   }
 
   ngOnInit() {

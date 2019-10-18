@@ -22,6 +22,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 import { ChartsModule } from 'ng2-charts';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { ConsultaComponent } from './main/pages/consulta/consulta.component';
 
 
 @NgModule({
@@ -32,14 +33,15 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     LoginComponent,
     MonitoreoComponent,
     AeropuertoComponent,
-    InicioComponent
+    InicioComponent,
+    ConsultaComponent
   ],
   imports: [
     SweetAlert2Module.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule ,// imports firebase/storage only needed for storage features
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
     AngularFireDatabaseModule,
     ChartsModule,
     BrowserModule,

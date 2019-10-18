@@ -5,6 +5,7 @@ import { LoginComponent } from '../main/pages/login/login.component';
 import { MonitoreoComponent } from '../main/pages/monitoreo/monitoreo.component';
 import { InicioComponent } from '../main/pages/inicio/inicio.component';
 import { AeropuertoComponent } from '../main/pages/aeropuerto/aeropuerto.component';
+import { ConsultaComponent } from '../main/pages/consulta/consulta.component';
 
 
 
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path:  'login', component: LoginComponent },
   { path:  'inicio', component: InicioComponent },
   { path:  'monitoreo', component: MonitoreoComponent },
-  { path:  'aeropuerto', component: AeropuertoComponent }
+  { path:  'aeropuerto', component: AeropuertoComponent },
+  { path:  'consulta', component: ConsultaComponent }
 ];
 
 @NgModule({
