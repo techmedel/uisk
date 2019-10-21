@@ -8,11 +8,10 @@ import { AngularFireDatabase } from '@angular/fire/database';
 export class MonitoreoService {
 
     public info_pc: any[];
+    public info_item_pc: any[];
 
     constructor(public afdb: AngularFireDatabase) {
         this.afdb.list<any>('info_pc').valueChanges().subscribe(data => {
-
-
             data.forEach(element => {
 
                 element.InfoProsses.forEach(_element => {
@@ -57,19 +56,13 @@ export class MonitoreoService {
                 }
 
             });
-
             this.info_pc = data;
-
-
         })
-
-
     }
 
-    generateCpuChart() {
-
+    public getInfoPc(id){
+        this.afdb.list<any>(`info_pc`,ref =>  ref.orderByChild('HostIDUiid').equalTo(id)).valueChanges().subscribe(data => this.info_item_pc = data)
     }
-
  
 
 }
