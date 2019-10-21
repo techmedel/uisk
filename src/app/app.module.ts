@@ -23,6 +23,8 @@ import { environment } from 'src/environments/environment';
 import { ChartsModule } from 'ng2-charts';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { ConsultaComponent } from './main/pages/consulta/consulta.component';
+import { MetallesComponent } from './main/pages/monitoreo/metalles/metalles.component';
+import { MdetallesComponent } from './main/pages/monitoreo/mdetalles/mdetalles.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { ConsultaComponent } from './main/pages/consulta/consulta.component';
     MonitoreoComponent,
     AeropuertoComponent,
     InicioComponent,
-    ConsultaComponent
+    ConsultaComponent,
+    MetallesComponent,
+    MdetallesComponent
   ],
   imports: [
     SweetAlert2Module.forRoot(),
