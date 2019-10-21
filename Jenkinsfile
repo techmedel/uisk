@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                bat "npm run build --prod"
+                bat "ng build --prod"
             }
         }
         stage('Publish') {

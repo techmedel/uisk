@@ -21,6 +21,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 import { ChartsModule } from 'ng2-charts';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { ConsultaComponent } from './main/pages/consulta/consulta.component';
+import { MetallesComponent } from './main/pages/monitoreo/metalles/metalles.component';
+import { MdetallesComponent } from './main/pages/monitoreo/mdetalles/mdetalles.component';
 
 
 @NgModule({
@@ -31,13 +35,17 @@ import { ChartsModule } from 'ng2-charts';
     LoginComponent,
     MonitoreoComponent,
     AeropuertoComponent,
-    InicioComponent
+    InicioComponent,
+    ConsultaComponent,
+    MetallesComponent,
+    MdetallesComponent
   ],
   imports: [
+    SweetAlert2Module.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule ,// imports firebase/storage only needed for storage features
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
     AngularFireDatabaseModule,
     ChartsModule,
     BrowserModule,
