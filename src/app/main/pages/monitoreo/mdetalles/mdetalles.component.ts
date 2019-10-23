@@ -13,13 +13,11 @@ export class MdetallesComponent implements OnInit {
 
   constructor(
     public router: ActivatedRoute,
-    public ms :MonitoreoService){ 
+    public ms: MonitoreoService) {
     var id = this.router.snapshot.paramMap.get('HostIDUiid')
     if (id != "") {
       this.ms.getInfoPc(id);
     } else {
-
-      
     }
   }
 
