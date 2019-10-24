@@ -7,7 +7,7 @@ import { environment } from './environments/environment';
 
 export function getBaseUrlCan() {
   if (environment.production) 
-    return 'http://192.168.1.222:81/ap'
+    return 'http://192.168.1.222:81/api'
   else return 'http://192.168.1.222:81/api'
 }
 

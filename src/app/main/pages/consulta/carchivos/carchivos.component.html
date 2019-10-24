@@ -1,0 +1,14 @@
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let item of cs.biva_docs">
+        <mat-expansion-panel-header class="right-aligned-header">
+            <mat-panel-title>
+                {{item.title}}
+            </mat-panel-title>
+            <mat-panel-description>
+                {{item.date | date}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        {{item.description}}
+    </mat-expansion-panel>
+
+</mat-accordion>
