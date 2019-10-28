@@ -1,1 +1,1 @@
-<p>seccion toolbar</p>
+<span *ngFor="let item of items"><a [routerLink]="[item]" *ngIf="item!=''">> {{item}}</a></span>

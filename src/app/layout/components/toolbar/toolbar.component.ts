@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterEvent, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() {
-   
+  public items: any[]
+
+  constructor(public router: Router) {
+    router.events.subscribe((val) => {
+      if(val instanceof NavigationEnd ){
+        this.items = val.url.split("/")
+      }
+    });
   }
 
   ngOnInit(): void {
