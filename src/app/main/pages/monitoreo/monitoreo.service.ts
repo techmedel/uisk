@@ -12,6 +12,8 @@ export class MonitoreoService {
 
     constructor(public afdb: AngularFireDatabase) {
         this.afdb.list<any>('info_pc').valueChanges().subscribe(data => {
+            console.log(data);
+            
             data.forEach(element => {
 
                 element.InfoProsses.forEach(_element => {
@@ -21,9 +23,6 @@ export class MonitoreoService {
                 element.InfoProsses.reverse();
                 var aux = element.InfoProsses.filter(word => word.Ttulodeventana != "N/D")
                 element.toprosses = aux.slice(1, 5)
-                
-                
-                
 
                 var core_persent = 0
 

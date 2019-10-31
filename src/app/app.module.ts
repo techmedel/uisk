@@ -26,6 +26,7 @@ import { ConsultaComponent } from './main/pages/consulta/consulta.component';
 import { MdetallesComponent } from './main/pages/monitoreo/mdetalles/mdetalles.component';
 import { CnoticiasComponent } from './main/pages/consulta/cnoticias/cnoticias.component';
 import { CarchivosComponent } from './main/pages/consulta/carchivos/carchivos.component';
+import { MresumenComponent } from './main/pages/monitoreo/mresumen/mresumen.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { CarchivosComponent } from './main/pages/consulta/carchivos/carchivos.co
     ConsultaComponent,
     MdetallesComponent,
     CnoticiasComponent,
-    CarchivosComponent
+    CarchivosComponent,
+    MresumenComponent
   ],
   imports: [
     SweetAlert2Module.forRoot(),
